@@ -1,14 +1,13 @@
 nav{
     width: 100%;
-    min-height: 10vh;
+    min-height: 11vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     box-shadow: 0px 0px 2px var(--color-four);
-    background: rgba(161, 161, 161, 0.295);
+    background: rgba(180, 179, 179, 0.219);
     z-index: 100;
-    overflow-x: hidden;
 }
 
 .logo{

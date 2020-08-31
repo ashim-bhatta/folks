@@ -15,8 +15,13 @@ const Nav = ( ) => {
 
     const [isNavOpen, setIsNavOpen ] = useState(false)
     const [ isSearchBarOpen, setIsSearchBarOpen ] = useState(false)
+
+    const navPosition = ( ) => {
+        console.log('a');
+    }
+    
     return(
-        <nav className='main-padding'>
+        <nav className='main-padding nav' onScroll={navPosition}>
             <div className="logo">
                 <a href="/home">FOLKS</a>
             </div>
