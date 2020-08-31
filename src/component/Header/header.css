@@ -1,5 +1,5 @@
 header{
-    width: 100vw;
+    width: 100%;
     min-height: 90vh;
     background: radial-gradient(rgba(63, 63, 68, 0.5), rgba(30, 30, 36, 0.5)) ,url('../../img/hero.jpg') ; 
     background-size: cover;
@@ -20,8 +20,9 @@ header{
 }
 
 .header-content h2{
-    font-size: 28px;
+    font-size: clamp(20px, calc(5vw + 2px), 42px );
     text-transform: uppercase;
+    max-width: 750px;
 }
 
 .header-content p{
@@ -31,3 +32,8 @@ header{
 }
 
 
+@media only screen and (min-width: 750px) {
+    .header-content h2{
+        
+    }
+}

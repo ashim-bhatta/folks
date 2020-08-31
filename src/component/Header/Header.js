@@ -7,7 +7,7 @@ const Header = ( ) => {
             <div className="main-padding">
                 <div className="header-content">
                     <h2>
-                        you can be as naughty as <br/> you want
+                        you can be as naughty as you want
                     </h2>
                     <p>
                         Just don't get caught
