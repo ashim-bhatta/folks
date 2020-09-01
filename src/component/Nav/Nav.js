@@ -5,6 +5,7 @@ import {NavLink} from 'react-router-dom'
 import './nav.css'
 
 const Nav = ( ) => {
+    // nav menu
     const navMenus = [
         'sales',
         'new',
@@ -14,14 +15,10 @@ const Nav = ( ) => {
     ]
 
     const [isNavOpen, setIsNavOpen ] = useState(false)
-    const [ isSearchBarOpen, setIsSearchBarOpen ] = useState(false)
+ 
 
-    const navPosition = ( ) => {
-        console.log('a');
-    }
-    
     return(
-        <nav className='main-padding nav' onScroll={navPosition}>
+        <nav className='main-padding nav'>
             <div className="logo">
                 <a href="/home">FOLKS</a>
             </div>

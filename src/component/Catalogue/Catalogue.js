@@ -31,7 +31,7 @@ const Catalogue = ( ) => {
                         return(
                             <div className="single-type">
                                 <img src={type.img} alt={type.text}/>
-                                <Link className='btn catalogue-btn'> {type.text}</Link>
+                                <Link to={type.link} className='btn catalogue-btn'> {type.text}</Link>
                             </div>
                         )
                     })

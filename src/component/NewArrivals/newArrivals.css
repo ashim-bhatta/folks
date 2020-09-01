@@ -1,0 +1,43 @@
+.new-arrivals{
+    background:var(--background-color);
+    padding-top: 50px;
+    overflow: hidden;
+}
+.small{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    
+}
+.medium, .large, .extra-large{
+    display: none;
+    
+}
+    
+
+@media only screen and (min-width: 580px) {
+    .small, .large, .extra-large{
+        display: none;
+    }
+    .medium{
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    .small, .medium, .extra-large{
+        display: none;
+    }
+    .large{
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .medium, .large, .small{
+        display: none;
+    }
+    .extra-large{
+        display: flex;
+    }
+}
