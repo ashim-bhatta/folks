@@ -7,6 +7,7 @@ import product1 from '../../img/product-1.png';
 import product2 from '../../img/product-2.png';
 import product3 from '../../img/product-3.png';
 import product4 from '../../img/product-4.png';
+import product5 from '../../img/product-5.png';
 
 import 'swiper/swiper.scss'
 import 'swiper/components/navigation/navigation.scss'
@@ -52,7 +53,7 @@ const NewArrivals = ( ) => {
             colors: ['blue', 'red', 'black', 'green']
         },
         {
-            img: product1,
+            img: product5,
             name: 'Product Five',
             description : 'This is Product Detail',
             price: '32',

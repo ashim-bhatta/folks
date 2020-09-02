@@ -44,7 +44,7 @@ img{
     background: var(--btn-bg, transparent);
     cursor: pointer;
     position: relative; 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.4px;
     border-radius: 5px;

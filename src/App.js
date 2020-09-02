@@ -7,6 +7,7 @@ import {
   Link,
   Router
 } from "react-router-dom";
+import SingleProduct from './component/SingleProduct/SingleProduct';
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
           <Route exact path='/home'>
             <Home />
           </Route>
-
+          <Route path='/name'>
+            <SingleProduct />
+          </Route>
           <Route  >
             <h1>404</h1>
           </Route>
