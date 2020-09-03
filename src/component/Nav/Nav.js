@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { AiOutlineSearch, AiOutlineHeart, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 import {NavLink} from 'react-router-dom'
 
 import './nav.css'
 
 const Nav = ( ) => {
+    const navbarRef = useRef(null)
     // nav menu
     const navMenus = [
         'sales',
@@ -15,10 +16,17 @@ const Nav = ( ) => {
     ]
 
     const [isNavOpen, setIsNavOpen ] = useState(false)
- 
+    
+    window.onscroll = function() {
+        if (window.pageYOffset > 400) {
+            navbarRef.current.classList.add('scrolled')
+          } else {
+            navbarRef.current.classList.remove('scrolled')
+          }
+    }
 
     return(
-        <nav className='main-padding nav'>
+        <nav className='main-padding nav' ref={navbarRef}>
             <div className="logo">
                 <a href="/home">FOLKS</a>
             </div>

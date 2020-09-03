@@ -1,6 +1,7 @@
 .new-arrivals{
     background:var(--background-color);
     padding-top: 50px;
+    padding-bottom: 80px;
     overflow: hidden;
 }
 .small{

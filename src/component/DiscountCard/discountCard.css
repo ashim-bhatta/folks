@@ -1,0 +1,35 @@
+.discount-card{
+    width: 100%;
+    height: 45vh;
+    min-height: 250px;
+    background-color: var(--color-one);
+    color: var(--color-fou, white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.discount-card h2{
+    font-size: 28px;
+    font-size: clamp(28px, calc(6vw + 2px), 48px );
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.discount-card p{
+    margin: 5px 0 25px 0;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-three);
+}
+
+.discount-card .btn{
+    width: 180px;
+    height: 45px;
+    text-align: center ;
+}
