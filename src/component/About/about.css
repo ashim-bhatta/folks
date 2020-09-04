@@ -27,17 +27,9 @@
     padding: 30px 0;
 }
 
-.about-content > * + *{
-    margin-top: 15px;
-}
-
-.about-content h3{
-    font-size: 22px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
 .about-content p{
     font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .about .about-content .btn{

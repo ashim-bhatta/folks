@@ -1,0 +1,71 @@
+.newsletter{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-one);
+}
+.newsletter form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+}
+
+.newsletter form input{
+    width: 100%;
+    flex-basis: 500px;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: rgba(92, 92, 92, 0.85);
+    border-bottom: 1px solid var(--color-four);
+    font-weight: 700;
+    padding-left: 5px;
+    margin: 0px 20px 20px 0;
+}
+
+.newsletter form .btn{
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: left;
+}
+.newsletter form input::placeholder{
+    color: rgba(92, 92, 92, 0.85);
+    font-weight: 500;
+    
+}
+
+.newsletter span{
+    display: flex;
+    width: 100%;
+    max-width: 700px;
+}
+.newsletter span > *+*{
+    margin-left: 10px;
+}
+
+.newsletter span p{
+    font-size: 14px;
+
+}
+.newsletter span p a{
+    color: var(--color-four);
+    text-decoration: underline;
+}
+@media(min-width: 750px){
+    .newsletter{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .newsletter form{
+        flex-direction: row;
+    }
+}

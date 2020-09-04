@@ -1,0 +1,52 @@
+.why-us{
+   
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    background:var(--background-color);
+    text-align: center;
+}
+
+.why-us > div{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.why-us .point:hover{
+    box-shadow: 1px 1px 20px rgba(160, 159, 159, 0.27);
+    border-radius: 10px;
+}
+.why-us .point{
+    flex-basis: 340px;
+    padding: 30px;
+}
+
+.why-us .point > * + *{
+    margin-top: 15px;
+}
+
+.why-us .point h3{
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.why-us .point p{
+    font-size: 14px;
+}
+
+.why-us .point:hover .icon-why-us{
+    color: var(--color-one);
+}
+.icon-why-us{
+    font-size: 38px;
+    color: var(--background-one);
+    cursor: pointer;
+}
+
+@media (min-width: 750px){
+    .why-us{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}

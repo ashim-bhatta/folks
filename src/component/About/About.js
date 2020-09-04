@@ -12,7 +12,7 @@ const About = ( ) => {
             </div>
 
             <div className="about-content">
-                <h3>who we are</h3>
+                <h2 className='title'>who we are</h2>
                 <p>
                     We want to enhance your unique and personal style with our fashion collection that are constant renovation
                 </p>
