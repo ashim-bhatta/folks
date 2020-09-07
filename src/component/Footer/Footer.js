@@ -4,9 +4,14 @@ import { AiFillInstagram, AiOutlineTwitter, AiFillYoutube } from 'react-icons/ai
 import { FaFacebookF, FaGooglePlusG } from 'react-icons/fa'
 
 import './footer.css'
+import { Link } from 'react-router-dom'
+
 const Footer = ( ) => {
+    const date = new Date
     return(
         <div className='footer main-padding'>
+            <h2> 
+                <Link to='/home'> Floks </Link>&copy; {date.getFullYear()} All Right Reserved</h2>
             <ul>
                 <h3>Shoes</h3>
                  <li>Women</li>
