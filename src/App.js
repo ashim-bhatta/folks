@@ -4,27 +4,49 @@ import Home from './pages/Home';
 import {
   Switch,
   Route,
-  Link,
-  Router
 } from "react-router-dom";
 import SingleProduct from './component/SingleProduct/SingleProduct';
+import ShoppingCart from './pages/ShoppingCart';
+import ProductStore from './pages/ProductStore';
 
 function App() {
   return (
     <div>
         <Switch>
+
+          {/* home page */}
           <Route exact path='/'>
             <Home />
           </Route>
+
           <Route exact path='/home'>
             <Home />
           </Route>
-          <Route path='/name'>
-            <SingleProduct />
+ 
+          {/* product page */}
+          <Route 
+              exact
+              path='/:store'
+              render={(props) => <ProductStore { ...props } />}    
+          />
+
+          {/* product Details page */}
+          <Route 
+              exact
+              path='/:type/:dressName'
+              render={(props) => <SingleProduct { ...props } />}    
+          />
+
+          {/* cart */}
+          <Route path='/shopping-bag'>
+            <ShoppingCart />
           </Route>
+
+          {/* 404 page */}
           <Route  >
             <h1>404</h1>
           </Route>
+
         </Switch>
     </div>
   );

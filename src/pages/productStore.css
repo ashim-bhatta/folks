@@ -1,0 +1,13 @@
+.productGrid{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-content: ;
+}
+
+.productGrid *{
+    /* margin: 20px; */
+}

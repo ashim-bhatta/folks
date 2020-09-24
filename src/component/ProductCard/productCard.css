@@ -57,7 +57,7 @@
     overflow: hidden;
 }
 .product-card-img{
-    width: auto;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top;
@@ -69,10 +69,11 @@
 }
 
 .product-card-details h4,.product-card-details span{
-    font-size: 20px;
+    font-size: 13px;
     letter-spacing: 0.5px;
     word-spacing: 0.9px;
     display: inline-block;
+    max-width: 88%;
 }
 
 .product-card-details p{
@@ -135,7 +136,7 @@
     }
 
     .product-card:hover  .product-card-details h4{
-        font-size: 23px;
+        font-size: 18px;
     }
 
     .product-card:hover  .product-card-details span{

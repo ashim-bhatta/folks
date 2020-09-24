@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { AiOutlineSearch, AiOutlineHeart, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import './nav.css'
 
@@ -8,11 +8,10 @@ const Nav = ( ) => {
     const navbarRef = useRef(null)
     // nav menu
     const navMenus = [
-        'sales',
-        'new',
-        'woman',
+        'store',
+        'women',
         'men',
-        'collections'
+        'child'
     ]
 
     const [isNavOpen, setIsNavOpen ] = useState(false)
@@ -51,7 +50,7 @@ const Nav = ( ) => {
             <div className="action">
                 <AiOutlineSearch className='action-icon icon-search' />
                 <AiOutlineHeart className='action-icon icon-heart' />
-                <AiOutlineShoppingCart className='action-icon icon-cart' />
+                <NavLink to='shopping-bag'><AiOutlineShoppingCart className='action-icon icon-cart' /></NavLink>
                 <AiOutlineUser className='action-icon icon-user' />
 
                 <div className="toogle-menu" onClick={() => setIsNavOpen(!isNavOpen)}>

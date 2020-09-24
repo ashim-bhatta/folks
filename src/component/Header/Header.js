@@ -12,7 +12,7 @@ const Header = ( ) => {
                     <p>
                         Just don't get caught
                     </p>
-                    <Link className='btn white-btn'>
+                    <Link to='/' className='btn white-btn'>
                         shop now
                     </Link>
                 </div>

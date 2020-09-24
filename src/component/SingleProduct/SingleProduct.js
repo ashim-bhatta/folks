@@ -1,11 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import Nav from '../Nav/Nav';
+import product from '../../product'
+import { v4 as uuid } from 'uuid';
 
-import product1 from '../../img/product-1.png';
-import product2 from '../../img/product-2.png';
-import product3 from '../../img/product-3.png';
-import product4 from '../../img/product-4.png';
-import product5 from '../../img/product-5.png';
 
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 import {  BsFillHeartFill  } from 'react-icons/bs';
@@ -13,19 +10,17 @@ import {  BsFillHeartFill  } from 'react-icons/bs';
 
 import './singleProduct.css'
 import NewArrivals from '../NewArrivals/NewArrivals';
-const SingleProduct = ( ) => {
+const SingleProduct = ( props ) => {
+
+    const dressName = props.match.params.dressName.replace(/-/g, ' ')
     const thumImage = document.getElementsByClassName('img-thum')
     const active = document.getElementsByClassName('active')
     const wrapperRef = useRef(null)
     const mainImageRef = useRef(null)
 
-    const images = [
-        product1,
-        product2,
-        product3,
-        product4,
-        product5,
-    ]
+    const currentProduct = product.filter(curPro => curPro.name == dressName)
+    const mainImage = (currentProduct[0].image[0]);
+    const { name, size, del, incart, type,  price } = currentProduct[0]
 
     // sliding thumnail image
     const changePos = ( sign ) => {
@@ -58,13 +53,15 @@ const SingleProduct = ( ) => {
         thumImage[0].classList.add('active')
     }, [])
 
+
+
     return(
         <div className='single-product'>
             <Nav />
             
             <div className="single-product-content main-padding">
                 <div className="address">
-                    <p>Home &#62; Women <span> &#62; Dresses </span> </p>
+                    <p>Home &#62; {type} <span style={{wordSpacing : '0.2px'}}> &#62; {name} </span> </p>
                 </div>
 
                 <div className="product-container">
@@ -83,9 +80,9 @@ const SingleProduct = ( ) => {
                             {/* thumnail images */}
                             <div className="thumnail-wrapper" ref={wrapperRef}>
                                 {
-                                    images.map((image, i) => {
+                                    currentProduct[0].image.map((image, i) => {
                                         return(
-                                            <div className="thumnail-image">
+                                            <div className="thumnail-image"  key={uuid()}>
                                                 <img src={image} alt="thumnail of product"  onMouseOver={e => changeImg(e)} className='img-thum'/>
                                             </div>
                                         )
@@ -97,7 +94,7 @@ const SingleProduct = ( ) => {
 
                                 {/* main product image */}
                         <div className="main-product-image">
-                            <img src={images[0]} alt="main product image" ref={mainImageRef} />
+                            <img src={mainImage} alt="main product image" ref={mainImageRef} />
                         </div>
                     </div>
 
@@ -107,15 +104,15 @@ const SingleProduct = ( ) => {
                             <BsFillHeartFill className='icon-for-wish-list'/>
                         <div className="titles">
                             <h4>
-                                Cool Image Name
+                                {name}
                             </h4>
 
                             <p>
-                                This model Is wearing something Cool of Size M
+                                {del}
                             </p>
 
                             <span>
-                                $29
+                                ${price}
                             </span>
                         </div>
                         
@@ -131,12 +128,22 @@ const SingleProduct = ( ) => {
                             
                             <select name="select size" id="">
                                 <option value="">Select Size</option>
-                                <option value="Xl">XL</option>
-                                <option value="l">L</option>
-                                <option value="S">S</option>
+                                {
+                                    size.map(s => {
+                                        return(
+                                            <option key={uuid()} value="">{s}</option>
+                                        )
+                                    })
+                                }
                             </select>
                         </div>
-                         <button className="btn"> Add to Cart</button>
+                         
+                            { incart?(
+                                <button className="btn"> In Cart</button>
+                             ):(
+                                <button className="btn add"> Add to Cart</button>
+                             )}
+                         
                     </div>
                 </div>
             </div>

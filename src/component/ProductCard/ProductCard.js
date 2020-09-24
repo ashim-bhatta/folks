@@ -1,19 +1,21 @@
 import React from 'react'
 import './productCard.css'
+import { v4 as uuid } from 'uuid';
+import { Link } from 'react-router-dom';
+
 
 const ProductCard = ( product ) => {
-    const { img, name, description, price, latest, size, colors } = product.product;
-
-
+    const { image, name, del, price, latest, size, type } = product.product;
+    const removeSpaceName = name.replace(/\s/g, '-')
     return(
         <div className="product-card">
             <div className={latest?'badge show':'badge'}>
                 <span>New</span>
             </div>
             <div className="img">
-                <img className='product-card-img' src={img}  alt=""/>
+                <img className='product-card-img' src={image[0]}  alt=""/>
                 <div className="img-bg">
-                    <a href="#" className='btn'>view details</a>
+                    <Link to={{pathname: `/${type}/${removeSpaceName}`}} className='btn'>view details</Link>
                 </div>
             </div>
             <div className="product-card-details">
@@ -26,7 +28,7 @@ const ProductCard = ( product ) => {
                     <br/>
                     <p>
                         {
-                            description
+                            del
                         }
                     </p>
                     <span>
@@ -45,29 +47,13 @@ const ProductCard = ( product ) => {
                             {
                                 size.map( s => {
                                     return(
-                                        <h6 key={s} >{s}</h6>
+                                        <h6 key={uuid()} >{s}</h6>
                                     )
                                 })
                             }
                         </p>
                     </div>
 
-                    <div className="colors">
-                        <h4>
-                            COLORS
-                        </h4>
-                        <p>
-                            {
-                                colors.map( color => {
-                                    return(
-                                        <div className="color-circle" key={color} style={{background: color}}>
-
-                                        </div>
-                                    )
-                                })
-                            }
-                        </p>
-                    </div>
                     
                 </div>
             </div>

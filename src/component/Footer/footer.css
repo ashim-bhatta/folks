@@ -5,6 +5,7 @@
     background: var(--color-three);
     color: rgb(150, 150, 150);
     position: relative;
+    bottom: 0;
 }
 
 .footer > h2{

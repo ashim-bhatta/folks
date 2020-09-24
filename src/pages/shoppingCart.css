@@ -1,0 +1,32 @@
+.cart-list{
+    margin-top: 50px;
+    padding: 100px 0;
+    width: 100%;
+    height: auto;
+    max-width: 900px;
+    border-radius: 5px;
+    position: relative;
+}
+.cart-list h2{
+    font-size: 22px;
+    margin-bottom: 60px;
+}
+.cart-list > * + *{
+    margin-top: 10px;
+}
+
+.cart-list-wrapper{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: auto;
+    width: 80%;
+    height: auto;
+    max-width: 700px;
+    bottom: 0;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    background: rgba(162, 178, 194, 0.274);
+    border: 19ox solid violet;
+    z-index: -1;
+}

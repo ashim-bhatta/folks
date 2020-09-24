@@ -59,6 +59,17 @@ img{
   padding: 30px clamp(15px, calc(5vw), 150px);
 }
 
+.address{
+  color: #aaa9a9;
+  word-spacing: 10px;
+  font-size: clamp(14px, 3vw, 18px);
+  font-weight: 700;
+  font-family: monospace;
+}
+.address span{
+  color: var(--color-three);
+}
+
 .btn{
     padding: 12px 50px;
     color: var(--btn-color, white);

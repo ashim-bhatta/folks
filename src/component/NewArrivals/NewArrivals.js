@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState } from 'react'
 import ProductCard from '../ProductCard/ProductCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination,  A11y} from 'swiper'
+import { v4 as uuid } from 'uuid';
+import product from '../../product'
 
 import product1 from '../../img/product-1.png';
 import product2 from '../../img/product-2.png';
@@ -16,8 +18,12 @@ import 'swiper/components/pagination/pagination.scss'
 import './newArrivals.css'
 
 SwiperCore.use([Navigation, Pagination,  A11y])
+
 const NewArrivals = ( ) => {
 
+    // chunk array into 5
+    const productChunk = product.slice( 0, 5 )
+    console.log(productChunk);
     const products = [
         {
             img: product1,
@@ -83,9 +89,9 @@ const NewArrivals = ( ) => {
             >
                 
                     {
-                        products.map(product => {
+                        productChunk.map(product => {
                             return(
-                                <SwiperSlide key={product.name} style={{ display : 'flex', justifyContent: 'center', alignItems: "center"}}>
+                                <SwiperSlide key={uuid()} style={{ display : 'flex', justifyContent: 'center', alignItems: "center"}}>
                                     <ProductCard product={product}/>
                                 </SwiperSlide>
                             )
@@ -103,9 +109,9 @@ const NewArrivals = ( ) => {
             >
                 
                     {
-                        products.map(product => {
+                        productChunk.map(product => {
                             return(
-                                <SwiperSlide style={{ display : 'flex', justifyContent: 'center', alignItems: "center"}}>
+                                <SwiperSlide key={ uuid()} style={{ display : 'flex', justifyContent: 'center', alignItems: "center"}}>
                                     <ProductCard product={product}/>
                                 </SwiperSlide>
                             )
@@ -123,9 +129,9 @@ const NewArrivals = ( ) => {
             >
                 
                     {
-                        products.map(product => {
+                        productChunk.map(product => {
                             return(
-                                <SwiperSlide style={{ display : 'flex', justifyContent: 'center', alignItems: "center"}}>
+                                <SwiperSlide key={ uuid()} style={{ display : 'flex', justifyContent: 'center', alignItems: "center"}}>
                                     <ProductCard product={product}/>
                                 </SwiperSlide>
                             )
@@ -143,9 +149,9 @@ const NewArrivals = ( ) => {
             >
                 
                     {
-                        products.map(product => {
+                        productChunk.map(product => {
                             return(
-                                <SwiperSlide style={{ display : 'flex', justifyContent: 'center', alignItems: "center"}}>
+                                <SwiperSlide key={ uuid()} style={{ display : 'flex', justifyContent: 'center', alignItems: "center"}}>
                                     <ProductCard product={product}/>
                                 </SwiperSlide>
                             )

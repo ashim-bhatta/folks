@@ -1,0 +1,124 @@
+.shopping-cart-card{
+    padding: 15px 20px;
+    width: 100%;
+    max-width: 900px;
+    height: 120px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    border-radius: 05px;
+    position: relative;
+    transition: 250ms ease-in-out;
+    background-color: white;
+    /* transform: scaleX(1.2); */
+    transform-origin: center;
+}
+
+.shopping-cart-card:hover{
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.03);
+}
+.shopping-cart-card > * + *{
+    margin-left: 20px;
+}
+.shopping-cart-card .shopping-cart-card-img{
+    height: 100%;
+    border-radius: 5px;
+    width: 80px;
+    overflow: hidden;
+}
+
+.shopping-cart-card-name{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.shopping-cart-card-name h3{
+    /* color: black; */
+    font-size: 16px;
+}
+.shopping-cart-card-name p{
+    color: rgb(136, 136, 136);
+    color: var(--color-one);
+    font-size: 14px;
+    margin: 10px 10px;
+}
+
+.product-quantity{
+    display: flex;
+    /* background: #000; */
+    /* justify-content: center; */
+    /* align-content: center; */
+}
+
+.product-minus, .product-plus{
+    border: 1px solid rgba(134, 134, 134, 0.315);
+    width: 35px;
+    font-size: 28px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+
+}
+
+.product-quantity h4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.product-extra{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    bottom: 15px;
+}
+
+.product-extra h5{
+    color: rgba(134, 134, 134, 0.6);
+    font-weight: 700;
+    font-size: 12px;
+}
+.product-extra h5 span{
+    color: var(--color-four);
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.product-extra .delete-icon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    bottom: 15px;
+    font-size: 22px;
+    fill: var(--color-one);
+    cursor: pointer;
+    transition: 150ms ease-in-out;
+}
+.product-extra .delete-icon:hover{
+    transform: scale(0.9);
+}
+.product-extra .delete-icon:active{
+    transform: scale(1);
+}
+
+@media(min-width: 700px){
+    .shopping-cart-card{
+        height: 150px;
+    }
+.shopping-cart-card .shopping-cart-card-img{
+        width: 120px;
+    }
+
+.shopping-cart-card-name p{
+        margin: 30px 0 10px 0;
+    }
+}
