@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react'
+import { useContext } from 'react';
 import { AiOutlineSearch, AiOutlineHeart, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom'
+import { CartContext } from '../../context/Cart';
 
 import './nav.css'
 
@@ -13,7 +15,7 @@ const Nav = ( ) => {
         'men',
         'child'
     ]
-
+    const { cartLength } = useContext(CartContext)
     const [isNavOpen, setIsNavOpen ] = useState(false)
     
     window.onscroll = function() {
@@ -50,7 +52,7 @@ const Nav = ( ) => {
             <div className="action">
                 <AiOutlineSearch className='action-icon icon-search' />
                 <AiOutlineHeart className='action-icon icon-heart' />
-                <NavLink to='shopping-bag'><AiOutlineShoppingCart className='action-icon icon-cart' /></NavLink>
+                <NavLink to='/shopping-bag'><AiOutlineShoppingCart className='action-icon icon-cart' />{cartLength} </NavLink>
                 <AiOutlineUser className='action-icon icon-user' />
 
                 <div className="toogle-menu" onClick={() => setIsNavOpen(!isNavOpen)}>

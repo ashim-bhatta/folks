@@ -7,6 +7,8 @@ import ShoppingCartCard from '../component/ShoppingCartCard/ShoppingCartCard'
 import './shoppingCart.css'
 
 import image from '../img/hero.jpg'
+import { useContext } from 'react'
+import { CartContext } from '../context/Cart'
 
 const ShoppingCart = ( ) => {
     const style = {
@@ -18,6 +20,7 @@ const ShoppingCart = ( ) => {
         
     }
 
+    const { cart } = useContext(CartContext)
     const products = [
         {
             img: image,
@@ -38,7 +41,8 @@ const ShoppingCart = ( ) => {
                     <div className="cart-list">
                         <h2 className=''> Card Summary</h2>
                             {
-                                products.map(product => {
+                                cart.map(product => {
+                                    console.log(product);
                                     return(
                                         <ShoppingCartCard key={product.name} product= {product} />
                                     )

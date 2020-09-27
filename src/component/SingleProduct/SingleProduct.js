@@ -1,15 +1,15 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useContext } from 'react'
 import Nav from '../Nav/Nav';
 import product from '../../product'
 import { v4 as uuid } from 'uuid';
-
-
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 import {  BsFillHeartFill  } from 'react-icons/bs';
-
-
 import './singleProduct.css'
 import NewArrivals from '../NewArrivals/NewArrivals';
+import { CartContext } from '../../context/Cart';
+
+
+
 const SingleProduct = ( props ) => {
 
     const dressName = props.match.params.dressName.replace(/-/g, ' ')
@@ -20,8 +20,8 @@ const SingleProduct = ( props ) => {
 
     const currentProduct = product.filter(curPro => curPro.name == dressName)
     const mainImage = (currentProduct[0].image[0]);
-    const { name, size, del, incart, type,  price } = currentProduct[0]
-
+    const { name, size, del, incart, type,  price, id } = currentProduct[0]
+    const { addToCart, removeFromCart } = useContext(CartContext)
     // sliding thumnail image
     const changePos = ( sign ) => {
         console.log(wrapperRef.current.scrollLeft);
@@ -139,9 +139,9 @@ const SingleProduct = ( props ) => {
                         </div>
                          
                             { incart?(
-                                <button className="btn"> In Cart</button>
+                                <button className="btn" > In Cart</button>
                              ):(
-                                <button className="btn add"> Add to Cart</button>
+                                <button className="btn add" onClick={() => addToCart(id)}> Add to Cart</button>
                              )}
                          
                     </div>

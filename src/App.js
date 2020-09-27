@@ -22,6 +22,11 @@ function App() {
           <Route exact path='/home'>
             <Home />
           </Route>
+
+          {/* cart */}
+          <Route exact path='/shopping-bag'>
+            <ShoppingCart />
+          </Route>
  
           {/* product page */}
           <Route 
@@ -37,10 +42,7 @@ function App() {
               render={(props) => <SingleProduct { ...props } />}    
           />
 
-          {/* cart */}
-          <Route path='/shopping-bag'>
-            <ShoppingCart />
-          </Route>
+          
 
           {/* 404 page */}
           <Route  >

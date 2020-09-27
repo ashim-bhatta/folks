@@ -1,13 +1,14 @@
-import React from 'react'
-import image from '../../img/hero.jpg'
+import React, { useContext } from 'react'
 import './shoppingCartCard.css'
 import { AiFillDelete } from 'react-icons/ai'
+import { CartContext } from '../../context/Cart'
 const ShoppingCartCard = ( { product }) => {
-    const { img, name, price } = product
+    const { image, name, price, id } = product
+    const { removeFromCart } = useContext(CartContext)
     return(
         <div className="shopping-cart-card">
             <div className="shopping-cart-card-img">
-                <img src={img} alt=""/>
+                <img src={image[0]} alt="image"/>
             </div>
 
 
@@ -32,7 +33,7 @@ const ShoppingCartCard = ( { product }) => {
 
 
             <div className="product-extra">
-                <AiFillDelete className='delete-icon' />
+                <AiFillDelete className='delete-icon' onClick={() => removeFromCart(id)}/>
                 <h5>{price} * 2 = <span>{price * 2} $ </span></h5>
             </div>
         </div>
